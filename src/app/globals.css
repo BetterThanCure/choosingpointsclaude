@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "@neondatabase/auth-ui/tailwind";
 
 :root {
   --cp-paper: #faf6ef;
@@ -12,6 +13,28 @@
   --cp-sage: #4d5c47;
   --cp-sage-soft: #e4e9dd;
   --cp-cream-dark: #f1ead9;
+
+  /* Bridge tokens for Neon Auth's prebuilt UI (@neondatabase/auth-ui),
+     which reads the standard shadcn/ui variable names below. */
+  --background: var(--cp-paper);
+  --foreground: var(--cp-ink);
+  --card: var(--cp-paper-raised);
+  --card-foreground: var(--cp-ink);
+  --popover: var(--cp-paper-raised);
+  --popover-foreground: var(--cp-ink);
+  --primary: var(--cp-ink);
+  --primary-foreground: var(--cp-paper);
+  --secondary: var(--cp-cream-dark);
+  --secondary-foreground: var(--cp-ink);
+  --muted: var(--cp-cream-dark);
+  --muted-foreground: var(--cp-ink-soft);
+  --accent: var(--cp-clay);
+  --accent-foreground: #ffffff;
+  --destructive: #b3261e;
+  --destructive-foreground: #ffffff;
+  --border: var(--cp-line);
+  --input: var(--cp-line);
+  --ring: var(--cp-clay);
 }
 
 @theme inline {

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
-import { StackProvider, StackTheme } from "@stackframe/stack";
-import { stackServerApp } from "@/stack";
+import { Providers } from "./providers";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -15,30 +14,6 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
 });
-
-// Matches Stack Auth's prebuilt sign-in/sign-up UI to the ChoosingPoints
-// palette (see src/app/globals.css) instead of its default theme.
-const stackThemeConfig = {
-  light: {
-    background: "#faf6ef",
-    foreground: "#211c16",
-    card: "#ffffff",
-    cardForeground: "#211c16",
-    popover: "#ffffff",
-    popoverForeground: "#211c16",
-    primary: "#211c16",
-    primaryForeground: "#faf6ef",
-    secondary: "#f1ead9",
-    secondaryForeground: "#211c16",
-    muted: "#f1ead9",
-    mutedForeground: "#55503f",
-    accent: "#b5552f",
-    accentForeground: "#ffffff",
-    border: "#e6ddca",
-    input: "#e6ddca",
-    ring: "#b5552f",
-  },
-};
 
 export const metadata: Metadata = {
   title: {
@@ -56,13 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-paper text-ink">
-        {stackServerApp ? (
-          <StackProvider app={stackServerApp}>
-            <StackTheme theme={stackThemeConfig}>{children}</StackTheme>
-          </StackProvider>
-        ) : (
-          children
-        )}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
