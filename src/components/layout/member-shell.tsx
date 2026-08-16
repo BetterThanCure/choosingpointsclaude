@@ -1,7 +1,14 @@
 import Link from "next/link";
+import { UserButton } from "@stackframe/stack";
 import { memberNav } from "@/lib/member-nav";
 
-export function MemberShell({ children }: { children: React.ReactNode }) {
+export function MemberShell({
+  children,
+  authenticated,
+}: {
+  children: React.ReactNode;
+  authenticated: boolean;
+}) {
   return (
     <div className="flex min-h-full flex-1 flex-col">
       <header className="border-b border-line bg-paper-raised">
@@ -9,9 +16,13 @@ export function MemberShell({ children }: { children: React.ReactNode }) {
           <Link href="/dashboard" className="font-serif text-lg text-ink">
             Choosing Points
           </Link>
-          <span className="rounded-full border border-clay/40 bg-clay-soft/60 px-3 py-1 text-[11px] font-medium uppercase tracking-wide text-clay">
-            Member preview
-          </span>
+          {authenticated ? (
+            <UserButton />
+          ) : (
+            <span className="rounded-full border border-clay/40 bg-clay-soft/60 px-3 py-1 text-[11px] font-medium uppercase tracking-wide text-clay">
+              Member preview
+            </span>
+          )}
         </div>
       </header>
 
