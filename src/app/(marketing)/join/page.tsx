@@ -32,7 +32,7 @@ export default function JoinPage() {
               ))}
             </ul>
             <Link
-              href="/handler/sign-up"
+              href="/auth/sign-up"
               className="mt-8 inline-block rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-clay"
             >
               Create your account

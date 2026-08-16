@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { UserButton } from "@stackframe/stack";
+import { UserButton } from "@neondatabase/auth-ui";
 import { memberNav } from "@/lib/member-nav";
 
 export function MemberShell({

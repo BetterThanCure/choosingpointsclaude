@@ -12,7 +12,7 @@ export default function SignInPage() {
       <section>
         <div className="mx-auto max-w-md px-6 py-16 text-center">
           <Link
-            href="/handler/sign-in"
+            href="/auth/sign-in"
             className="inline-block rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-clay"
           >
             Continue to sign in

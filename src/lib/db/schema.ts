@@ -12,15 +12,13 @@ import {
 } from "drizzle-orm/pg-core";
 
 /**
- * User identity lives in `neon_auth.users_sync`, a table Neon Auth
- * creates and manages once enabled in the Neon console. We don't
- * define or migrate that table here — it isn't ours to own — so
- * `userId` columns below are plain text (the Stack Auth user id) with
- * no Drizzle-managed foreign key. Once Neon Auth is enabled, a
- * follow-up migration can add
- * `references neon_auth.users_sync (id) on delete cascade`
- * as a hand-written SQL constraint for defense in depth; app-level
- * checks against the authenticated session already enforce ownership.
+ * User identity lives in Neon Auth's `neon_auth` schema (tables `user`,
+ * `session`, `account`, `verification`), managed by Neon — not by us. So
+ * `userId` columns below are plain text (the Neon Auth user id) with no
+ * Drizzle-managed foreign key. A follow-up migration can add
+ * `references neon_auth.user (id) on delete cascade` as a hand-written
+ * SQL constraint for defense in depth; app-level checks against the
+ * authenticated session already enforce ownership.
  */
 
 export const appRole = pgEnum("app_role", ["member", "protector", "admin"]);
