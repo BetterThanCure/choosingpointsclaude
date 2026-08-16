@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  --cp-paper: #faf6ef;
+  --cp-paper-raised: #ffffff;
+  --cp-ink: #211c16;
+  --cp-ink-soft: #55503f;
+  --cp-ink-faint: #8b8571;
+  --cp-line: #e6ddca;
+  --cp-clay: #b5552f;
+  --cp-clay-soft: #f1ded1;
+  --cp-sage: #4d5c47;
+  --cp-sage-soft: #e4e9dd;
+  --cp-cream-dark: #f1ead9;
+}
+
+@theme inline {
+  --color-paper: var(--cp-paper);
+  --color-paper-raised: var(--cp-paper-raised);
+  --color-ink: var(--cp-ink);
+  --color-ink-soft: var(--cp-ink-soft);
+  --color-ink-faint: var(--cp-ink-faint);
+  --color-line: var(--cp-line);
+  --color-clay: var(--cp-clay);
+  --color-clay-soft: var(--cp-clay-soft);
+  --color-sage: var(--cp-sage);
+  --color-sage-soft: var(--cp-sage-soft);
+  --color-cream-dark: var(--cp-cream-dark);
+  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cp-paper);
+  color: var(--cp-ink);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-serif {
+  font-family: var(--font-fraunces), ui-serif, Georgia, serif;
+}
+
+::selection {
+  background: var(--cp-clay-soft);
+  color: var(--cp-ink);
+}
