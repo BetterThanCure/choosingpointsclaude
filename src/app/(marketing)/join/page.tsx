@@ -32,15 +32,11 @@ export default function JoinPage() {
               ))}
             </ul>
             <Link
-              href="/sign-in"
+              href="/handler/sign-up"
               className="mt-8 inline-block rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-clay"
             >
               Create your account
             </Link>
-            <p className="mt-4 text-xs leading-5 text-ink-faint">
-              Account creation is being connected in the next milestone.
-              This build already reflects the full sign-up path and design.
-            </p>
           </div>
         </div>
       </section>
