@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { ReactNode } from "react";
+import { Toaster } from "sonner";
 import { NeonAuthUIProvider } from "@neondatabase/auth-ui";
 import { authClient } from "@/lib/auth/client";
 
@@ -21,6 +22,10 @@ export function Providers({ children }: { children: ReactNode }) {
       Link={Link}
     >
       {children}
+      {/* Better Auth UI's sign-in/sign-up forms report success and error
+          via sonner's toast() — without this mounted, those messages fire
+          into the void and forms look like they silently do nothing. */}
+      <Toaster position="top-center" richColors />
     </NeonAuthUIProvider>
   );
 }
