@@ -14,5 +14,10 @@ export const auth =
     ? createNeonAuth({
         baseUrl,
         cookies: { secret: cookieSecret },
+        // Temporary: surfaces the exact rejected origin / trustedOrigins
+        // list in Vercel's function logs while diagnosing "Invalid
+        // origin" on sign-up. Dial back to the default ('warn') once
+        // resolved.
+        logLevel: "debug",
       })
     : null;
